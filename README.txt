@@ -22,7 +22,8 @@ step 3 - Double click the "launcher.bat" file
 
 v0.1 - 04/21/2020 - Beta release that currently complies half of the report in order to speed up manual work
 v0.2 - 05/13/2020 - Updated beta version with additional fields. Program output is ready to be pasted into the template without additional manipulation required
-v0.3 - 05/13/2020 - Updated beta version to now take in a mic item dump flat file, to poplulate the category field
+v0.3 - 05/20/2020 - Updated beta version to now take in a mic item dump flat file, to poplulate the category field
+v0.4 - 05/21/2020 - Updated beta version to now bring in the Brand field from the mic item dump.
 
 
 
