@@ -71,39 +71,43 @@ def main():
         df_cs_data[5] = ["Rusty Ames" if x == "Rusty Amees" else x for x in df_cs_data[5]]
         df_cs_data[3] = df_cs_data[3].map('{:0>6}'.format)
         df_cs_data[6] = df_cs_data[6].map('{:0>6}'.format)
+        df_cs_data[31] = df_cs_data[13] / df_cs_data[12]
+        df_cs_data[31] = df_cs_data[31].apply(lambda x: round(x, 1))
 
         df_cs_data = df_cs_data.reindex(df_cs_data.columns.tolist() + [26, 27, 28, 29, 30], axis=1)
-        df_cs_data = df_cs_data[[0, 1, 2, 3, 4, 5, 24, 22, 23, 6, 7, 8, 25, 9, 10, 11, 26, 27, 12, 13, 14, 28, 15, 16, 17, 18, 19, 20, 21, 29, 30]]
+        df_cs_data = df_cs_data[[0, 1, 2, 3, 4, 5, 24, 22, 23, 6, 7, 8, 25, 9, 10, 11, 26, 27, 12, 13, 31, 14, 28, 15, 16, 17, 18, 19, 20, 21, 29, 30]]
         df_cs_data.columns = ['GL', 
-                              'Location Name', 
-                              'Customer Code', 
-                              'Tops Code', 
-                              'Buyer Code', 
-                              'Category Business Manager', 
-                              'Category', 
-                              'Private Label Flag', 
-                              'Vendor Name', 
-                              'C&S Code', 
-                              'Item Description', 
-                              'Size', 
-                              'Brand', 
-                              'UPC - Vendor', 
-                              'UPC - Case', 
-                              'UPC - Item', 
-                              'WTD Category Unit Lift %', 
-                              'WTD Item Unit Lift %', 
-                              'Weekly Turn (Forecast)', 
-                              'BOH','Total On Order', 
-                              'OOS Yesterday', 
-                              'Next PO Due Date', 
-                              'Next PO Appt Date', 
-                              'Next PO Qty', 
-                              'Next Biceps PO#', 
-                              'Lead Time', 
-                              'Current Week Bookings', 
-                              'Future Bookings', 
-                              'Item Key', 
-                              'Manufacturer Status']
+                            'Location Name', 
+                            'Customer Code', 
+                            'Tops Code', 
+                            'Buyer Code', 
+                            'Category Business Manager', 
+                            'Category', 
+                            'Private Label Flag', 
+                            'Vendor Name', 
+                            'C&S Code', 
+                            'Item Description', 
+                            'Size', 
+                            'Brand', 
+                            'UPC - Vendor', 
+                            'UPC - Case', 
+                            'UPC - Item', 
+                            'WTD Category Unit Lift %', 
+                            'WTD Item Unit Lift %', 
+                            'Weekly Turn (Forecast)', 
+                            'BOH',
+                            'Inventory Weeks on Hand',
+                            'Total On Order', 
+                            'OOS Yesterday', 
+                            'Next PO Due Date', 
+                            'Next PO Appt Date', 
+                            'Next PO Qty', 
+                            'Next Biceps PO#', 
+                            'Lead Time', 
+                            'Current Week Bookings', 
+                            'Future Bookings', 
+                            'Item Key', 
+                            'Manufacturer Status']
 
         df_cs_data.to_excel(f"{archive_dir}CS-Sales-Change-{create_timestamp()}.xlsx", index=False)
 
