@@ -25,6 +25,8 @@ v0.2 - 05/13/2020 - Updated beta version with additional fields. Program output 
 v0.3 - 05/20/2020 - Updated beta version to now take in a mic item dump flat file, to poplulate the category field
 v0.4 - 05/21/2020 - Updated beta version to now bring in the Brand field from the mic item dump
 v0.5 - 06/08/2020 - Updated beta version to now calculate Inventory Weeks On Hand Column
+v0.51 - 06/09/2020 - Fixed bug where old Excel files would not be automatically deleted
+
 
 
 # Author
